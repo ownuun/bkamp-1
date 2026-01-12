@@ -55,7 +55,7 @@ export const FEED_SOURCES: FeedSource[] = [
 export async function fetchFeed(source: FeedSource): Promise<RawArticle[]> {
   try {
     const feed = await parser.parseURL(source.url);
-    return feed.items.slice(0, 5).map((item) => ({
+    return feed.items.slice(0, 15).map((item) => ({
       title: item.title || "No title",
       link: item.link || "",
       pubDate: item.pubDate || new Date().toISOString(),
