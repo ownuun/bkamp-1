@@ -12,6 +12,6 @@ jobs:
     steps:
       - name: Trigger cron endpoint
         run: |
-          curl -X GET "${{ secrets.SITE_URL }}/api/cron" \
+          curl -L -X GET "${{ secrets.SITE_URL }}/api/cron" \
             -H "Authorization: Bearer ${{ secrets.CRON_SECRET }}" \
             -H "Content-Type: application/json"
